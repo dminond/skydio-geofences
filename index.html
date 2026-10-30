@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skydio Geofence Builder</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.17.0/dist/leaflet-geoman.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Geofence Builder</h1>
+    <form id="search-form" class="search">
+      <input id="search-input" type="search" placeholder="Search address or place…" autocomplete="off">
+      <button type="submit">Go</button>
+    </form>
+    <div class="actions">
+      <label class="btn">Import<input id="import-input" type="file" accept=".geojson,.json,application/geo+json,application/json" hidden></label>
+      <button id="copy-btn" class="btn">Copy JSON</button>
+      <button id="download-btn" class="btn primary">Download .geojson</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="panel">
+        <h2>File</h2>
+        <label>Title<input id="fc-title" type="text"></label>
+        <label>Description<textarea id="fc-description" rows="2"></textarea></label>
+        <label>File name<input id="fc-filename" type="text"></label>
+      </section>
+
+      <section class="panel">
+        <h2>Defaults for new zones</h2>
+        <div class="grid2">
+          <label>Type
+            <select id="def-keepOut"><option value="true">Keep-out</option><option value="false">Keep-in</option></select>
+          </label>
+          <span></span>
+          <label>Floor (m)<input id="def-floor" type="number" step="0.1"></label>
+          <label>Floor frame<select id="def-floorFrame"></select></label>
+          <label>Ceiling (m)<input id="def-ceiling" type="number" step="0.1"></label>
+          <label>Ceiling frame<select id="def-ceilingFrame"></select></label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Zones <span id="zone-count" class="muted"></span></h2>
+          <button id="clear-btn" class="btn small danger">Clear all</button>
+        </div>
+        <p class="hint">Use the drawing tools on the map (polygon or rectangle). Click to add points; click the first point to close the shape. Use the edit tool to drag vertices.</p>
+        <div id="zone-list"></div>
+      </section>
+
+      <section class="panel">
+        <details>
+          <summary>Preview GeoJSON</summary>
+          <pre id="preview"></pre>
+        </details>
+      </section>
+    </aside>
+    <div id="map"></div>
+  </main>
+
+  <div id="toast" role="status"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.17.0/dist/leaflet-geoman.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

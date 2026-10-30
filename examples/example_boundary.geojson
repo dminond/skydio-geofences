@@ -1,0 +1,83 @@
+{
+  "type": "FeatureCollection",
+  "title": "Airspace Manager Example",
+  "description": "Example custom geofences for Airspace Manager with keep-out areas",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Keep-Out Zone",
+        "keepOut": true,
+        "floor": 0.0,
+        "ceiling": 120.0,
+        "floorFrame": "AGL",
+        "ceilingFrame": "AGL"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -122.33233917508798,
+              37.53403107824441
+            ],
+            [
+              -122.33202396398647,
+              37.53382598277223
+            ],
+            [
+              -122.33141778879141,
+              37.53444126749736
+            ],
+            [
+              -122.33170875288494,
+              37.53462072458609
+            ],
+            [
+              -122.33233917508798,
+              37.53403107824441
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Keep-Out Zone 2",
+        "keepOut": true,
+        "floor": 10.0,
+        "ceiling": 100.0,
+        "floorFrame": "AGL",
+        "ceilingFrame": "AGL"
+      },
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              -122.33165217653335,
+              37.53464636127751
+            ],
+            [
+              -122.33106216601021,
+              37.5342489915662
+            ],
+            [
+              -122.33077928425251,
+              37.53452458691339
+            ],
+            [
+              -122.33144203579917,
+              37.534877091106324
+            ],
+            [
+              -122.33165217653335,
+              37.53464636127751
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      }
+    }
+  ]
+}
