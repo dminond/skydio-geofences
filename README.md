@@ -64,6 +64,6 @@ then open http://localhost:8000.
 
 ## Deployment (GitHub Pages)
 
-`.github/workflows/pages.yml` deploys the site on every push to `main` (or manually via
-**Actions → Deploy to GitHub Pages → Run workflow**). One-time setup: in the repo go to
-**Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+The site is published by GitHub Pages directly from the root of the `main` branch
+(**Settings → Pages → Source: Deploy from a branch**, `main` / `/ (root)`). Any change merged
+into `main` goes live automatically at https://dminond.github.io/skydio-geofences/.
